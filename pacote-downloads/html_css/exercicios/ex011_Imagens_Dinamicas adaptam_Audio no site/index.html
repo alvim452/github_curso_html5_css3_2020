@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídia em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+       <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png"><!-----A imagem foto-p.png (p-pequena)é de 300px-->
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png"><!-----A imagem foto-m.png (m-de média) é de 700px-->
+        <img src="imagens/foto-g.png" alt="imagem flexivel">
+        
+        <!-----A imagem foto-g.png (g-grande) é de 1000px. Explicação detalhada; Por defeito a tela vai carregar a foto grande g-png mas se a tela for menor que 1050px vai carregar a foto m.png foto média; e se a tela for menor que  750px vai carregar a foto p.png. Para telas grandes(tv) carrega foto grande para telas médias(computador) carrega foto média e para telas pequenas(telemovel) carrega foto pequena. A base é a imagem padrão que eu quero carregar, acima vou colocando as sources na ordem seguida e obedecida (diminuir tamanho dos sources ou telas)-->
+        
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir Áudios em HTML5</p>
+
+    <!---<audio src="media/happy-mistake.mp3" controls autoplay></audio>----->
+
+        <!--tenho que colocar atag autoplay para conseguir reproduzir o audio na minha página, e tenho que colocar tambem a tag controls para poder iniciar ou terminar a faixa de audio.Nem todos os browswers são compativeis com o formato MP3. Existem os formatos MP3 WAV e OGG-->
+
+    <!---outra maneira de colocar audio; abro tag audio e elimino o src="", e agora no meio das duas tags de audio, vou escrever  source src="" type=""-->
+
+     <audio preload="metadata" autoplay controls loop>
+         <source src="media/guanacast-33.mp3" type="audio/mpeg">
+         <source src="media/guanacast-33.mp3" type="audio/ogg">
+         <source src="media/guanacast-33.mp3" type="audio/wav">
+            <p>Infelizmente o seu navegador não consegue reproduzir o Áudio <a href="media/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3</a></p>
+
+     </audio><!--- a ordem como são escritos estes comandos é muito importante, ele vai começar a tentar carregar os varios formatos de audio de cima para baixo, se por acso não conseguir carregar em nenhum dos formatos vai mostrar amensagem acima e mostra um link para baixar o arquivo-->
+
+     <!-- evitar a todo o custo utilizar arquivos WAV pois são arquivos muito muito grandese pesados--->
+
+     <!---Parametros da tag Audio:PRELOAD que pode ser auto, metadata ou none; AUTOPLAY que serve para reproduzir automaticamente o audio qd se abre a pagina;CONTROLS que mostra os boto~es de controle do audio inicio e fim; LOOP que serve pra tornar a reproduzir o audio desde o inicio quando ele chega ao fim -->
+    
+</body>
+</html>
